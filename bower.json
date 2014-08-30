@@ -1,0 +1,8 @@
+{
+  "name":"GinAndTopics",
+  "dependencies": {
+    "backbone":"latest",
+    "jquery":"latest",
+    "handlebars":"latest"
+  }
+}
