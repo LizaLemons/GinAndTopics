@@ -3,31 +3,50 @@
   <head>
     <meta charset="utf-8">
 		<title>Gin & Topics</title>
+
+    <!-- Dependency scripts -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Backbone components scripts -->
+    <script type="text/javascript" src="public/javascripts/application.js"></script>
+    <script type="text/javascript" src="public/javascripts/feeds.js"></script>
+    <script src="public/javascripts/models/storyModel.js"></script>
+    <script src="public/javascripts/collections/storiesCollection.js"></script>
+    <script src="public/javascripts/routers/storyRouter.js"></script>
+    <script src="public/javascripts/views/storiesCollectionView.js"></script>
+    <!-- Application scripts -->
+    <script src="public/javascripts/views/storyView.js"></script>
+    <!-- Backbone components scripts -->
   </head>
 
   <body>
     <h1>Gin & Topics</h1>
 
-
     <div id="feed">
-    <!-- feeds will be appended here -->
+      <!-- feeds will be appended here -->
     </div>
+    <div id='modal'>
 
+    </div>
+  <!-- Template for model view -->
+    <script id="story-template" type="text/x-handlebars-template">
+      <h3>{{title}}</h3>
+    </script>
 
-    <!-- Dependencies scripts -->
-  	<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/underscore/underscore.js"></script>
-		<script src="bower_components/backbone/backbone.js"></script>
-    <script src="bower_components/handlebars/handlebars.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <!-- Backbone components scripts -->
-    <script src="public/javascripts/models/storyModel.js"></script>
-    <script src="public/javascripts/collections/categories.js"></script>
-    <script src="public/javascripts/routers/router.js"></script>
-    <script src="public/javascripts/views/categoriesView.js"></script>
-    <script src="public/javascripts/views/storyView.js"></script>
-    <!-- Application scripts -->
-    <script type="text/javascript" src="public/javascripts/feeds.js"></script>
-    <script type="text/javascript" src="public/javascripts/application.js"></script>
+    <!-- Template for modal -->
+    <script id="story-modal-template" type="text/x-handlebars-template">
+      <a href="{{link}}">{{title}}</a>
+      <p>{{author}}</p>
+      <p>{{publishedDate}}</p>
+      <p>{{{contentSnippet}}}</p>
+      <div class="content">
+        {{{content}}}
+      </div>
+      <p>{{categories}}</p>
+    </script>
+
   </body>
 </html>

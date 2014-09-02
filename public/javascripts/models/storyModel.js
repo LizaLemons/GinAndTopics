@@ -1,6 +1,5 @@
-storyModel = Backbone.Model.extend({
+App.StoryModel = Backbone.Model.extend({
   initialize: function() {
-    console.log('New story model');
-  },
-  // urlRoot: 
+    // console.log("New story model");
+  }
 });
