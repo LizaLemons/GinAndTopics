@@ -34,10 +34,13 @@ App.Router = Backbone.Router.extend({
     var feed = new google.feeds.Feed(feedUrl);
     feed.setNumEntries(1);
     feed.load(function(result) {
-      console.log(result);
+      // console.log(result);
       if (!result.error) {
         for (var i = 0; i < result.feed.entries.length; i++) {
-          // console.log(result.feed.entries[i]);
+          var storyContent = result.feed.entries[i].content;
+          // JSON.stringify(storyContent);
+          console.log(storyContent);
+
           var storyModel = new App.StoryModel({
             title: result.feed.entries[i].title,
             author: result.feed.entries[i].author,
@@ -47,10 +50,49 @@ App.Router = Backbone.Router.extend({
             publishedDate: result.feed.entries[i].publishedDate,
             categories: result.feed.entries[i].categories
           });
-
           App.Views[category].collection.add(storyModel);
         }
       }
     });
   }
 });
+
+//////////////////////////////////////////////////////////
+// regex to escape adds in content and content snippet //
+////////////////////////////////////////////////////////
+
+// Escape:
+  // "da.feedsportal"
+  // <a href="http://da.feedsportal.com/r/204367071126/u/31/f/642564/c/34625/s/3e01249e/sc/4/rc/1/rc.htm" rel="nofollow">
+  // <img src="http://da.feedsportal.com/r/204367071126/u/31/f/642564/c/34625/s/3e01249e/sc/4/rc/1/rc.img" border="0"></a>
+
+// Modifiers:
+// g | find all matches rather than stopping after the first
+
+// escape all double quotes within <html>
+// 'mystring'.replace(/"/g, '&quot;');
+// 'mystring'.replace(/'/g, '&quot;');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

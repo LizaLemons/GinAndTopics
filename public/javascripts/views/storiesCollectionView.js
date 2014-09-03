@@ -28,6 +28,6 @@ App.StoriesCollectionView = Backbone.View.extend({
   }
   // showCategoryStories: function() {
   //   // App.router.navigate('') - need?
-  //   // trigger CSS to show more?
+  //   // trigger CSS to show more stories
   // }
 });

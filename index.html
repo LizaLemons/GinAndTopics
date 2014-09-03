@@ -42,14 +42,14 @@
       <a href="{{link}}">{{title}}</a>
       <p>{{author}}</p>
       <p>{{publishedDate}}</p>
-      <p>{{{contentSnippet}}}</p>
+      <!-- <p>{{{contentSnippet}}}</p> -->
       <div class="content">
-        {{{content}}}
+        {{{content}}}.replace("feedsportal", "XXXXX");
       </div>
       <p>{{categories}}</p>
     </script>
 
-    <!--     Template for collection view
+    <!-- Template for collection view
     <script id="category-template" type="text/x-handlebars-template">
       console.log("oh hai")
         <h2>{{category}}</h2>

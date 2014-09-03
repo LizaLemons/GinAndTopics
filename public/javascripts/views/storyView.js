@@ -18,5 +18,7 @@ App.StoryView = Backbone.View.extend({
   showModal: function() {
     var modal = $('#modal').empty();
     modal.html(this.modalTemplate(this.model.toJSON()));
+    // now: bottom of page
+    // instead
   }
 });
