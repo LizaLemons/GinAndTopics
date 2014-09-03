@@ -23,6 +23,7 @@ App.Router = Backbone.Router.extend({
       // $('#feed').append('<h2>' + category + '</h2>');
 
       // create collection view
+
       var storyCollection = new App.StoriesCollection();
       storyCollection.category = category;
       App.Views[category] = new App.StoriesCollectionView({collection: storyCollection});
@@ -41,7 +42,6 @@ App.Router = Backbone.Router.extend({
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
           // JSON.stringify(storyContent);
-          // console.log(storyContent);
 
           var storyModel = new App.StoryModel({
             title: result.feed.entries[i].title,

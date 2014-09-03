@@ -9,16 +9,13 @@ App.StoriesCollectionView = Backbone.View.extend({
     // this.render();
   },
   render: function(categories) {
-    // this.$el.empty();
-    // this.collection.forEach(function(model) {
       this.$el.html(this.template(this.collection));
       this.addAll();
-    // }, this);
-
-    // this.$el.append();......
   },
   events: {
     // click on collection h1, showCategoryStories
+
+    // click event on search button
   },
   addOne: function(newModel) {
     var singleView = new App.StoryView({ model: newModel })
