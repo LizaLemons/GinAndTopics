@@ -1,18 +1,19 @@
 App.StoriesCollectionView = Backbone.View.extend({
-  className: '.collection',
+  className: 'collection',
   initialize: function() {
     console.log("New Collection View");
     // listen for added models, when - create model view
     this.listenTo(this.collection, 'add', this.addOne);
     $('#feed').append(this.$el);
-    // this.template = Handlebars.compile($('#category-template').html());
+    this.template = Handlebars.compile($('#category-template').html());
     // this.render();
   },
   render: function(categories) {
-    this.$el.empty();
-    this.collection.forEach(function(model) {
-      this.$el.html(this.template(model.toJSON()));
-    }, this);
+    // this.$el.empty();
+    // this.collection.forEach(function(model) {
+      this.$el.html(this.template(this.collection));
+      this.addAll();
+    // }, this);
 
     // this.$el.append();......
   },

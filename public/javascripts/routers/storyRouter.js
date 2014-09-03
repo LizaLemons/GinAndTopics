@@ -20,10 +20,12 @@ App.Router = Backbone.Router.extend({
       var domId = feedsData[i]["domId"];
       var feedsArray = feedsData[i]["feeds"];
 
-      $('#feed').append('<h2>' + category + '</h2>');
+      // $('#feed').append('<h2>' + category + '</h2>');
 
       // create collection view
-      App.Views[category] = new App.StoriesCollectionView({collection: new App.StoriesCollection()});
+      var storyCollection = new App.StoriesCollection();
+      storyCollection.category = category;
+      App.Views[category] = new App.StoriesCollectionView({collection: storyCollection});
       // loop through feed URLs
       for (var j = 0; j < feedsArray.length; j++) {
         var storyModel = this.createFeedModel(feedsArray[j], category);
@@ -39,7 +41,7 @@ App.Router = Backbone.Router.extend({
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
           // JSON.stringify(storyContent);
-          console.log(storyContent);
+          // console.log(storyContent);
 
           var storyModel = new App.StoryModel({
             title: result.feed.entries[i].title,
@@ -53,6 +55,7 @@ App.Router = Backbone.Router.extend({
           App.Views[category].collection.add(storyModel);
         }
       }
+      App.Views[category].render();
     });
   }
 });
