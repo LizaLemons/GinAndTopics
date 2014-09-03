@@ -1,4 +1,4 @@
-GinAndTopics | Project 3
+Gin & Topics | Project 3
 ========================
 
 What is Gin & Topics?
