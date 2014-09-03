@@ -3,5 +3,4 @@ App.StoriesCollection = Backbone.Collection.extend({
   initialize: function() {
     console.log('New story collection');
   }
-
 });
