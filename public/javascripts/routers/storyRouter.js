@@ -14,15 +14,16 @@ App.Router = Backbone.Router.extend({
 
   feedsDataLoop: function() {
     // looping through feedsData hash
+
     for (var i = 0; i < feedsData.length; i++) {
       var category = feedsData[i]["category"];
       var domId = feedsData[i]["domId"];
       var feedsArray = feedsData[i]["feeds"];
 
-      // create collection view
-      App.Views[category] = new App.StoriesCollectionView({collection: new App.StoriesCollection()})
-      $('<h2>').text(category).appendTo('.collections');
+      $('#feed').append('<h2>' + category + '</h2>');
 
+      // create collection view
+      App.Views[category] = new App.StoriesCollectionView({collection: new App.StoriesCollection()});
       // loop through feed URLs
       for (var j = 0; j < feedsArray.length; j++) {
         var storyModel = this.createFeedModel(feedsArray[j], category);
@@ -46,6 +47,7 @@ App.Router = Backbone.Router.extend({
             publishedDate: result.feed.entries[i].publishedDate,
             categories: result.feed.entries[i].categories
           });
+
           App.Views[category].collection.add(storyModel);
         }
       }
