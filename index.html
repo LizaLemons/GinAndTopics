@@ -19,6 +19,7 @@
     <script src="public/javascripts/views/storiesCollectionView.js"></script>
     <!-- Application scripts -->
     <script src="public/javascripts/views/storyView.js"></script>
+    <script src="public/javascripts/views/searchView.js"></script>
     <!-- Backbone components scripts -->
   </head>
 
@@ -26,8 +27,8 @@
     <h1>Gin & Topics</h1>
 
     <div id="search">
-
-
+      <input id="input" type="text" placeholder="Search other categories">
+      <button id="search-button">Search</button>
     </div>
 
     <div id="feed">
@@ -49,7 +50,7 @@
       <p>{{publishedDate}}</p>
       <!-- <p>{{{contentSnippet}}}</p> -->
       <div class="content">
-        {{{content}}}.replace("feedsportal", "XXXXX");
+        {{{content}}}
       </div>
       <p>{{categories}}</p>
     </script>

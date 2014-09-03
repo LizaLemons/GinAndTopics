@@ -1,9 +1,19 @@
 
-// el: '#search'
+App.SearchView = Backbone.View.extend({
+  el: '#search',
+
+  events: {
+    'click #search-button': 'find'
+  },
+
+  find: function() {
+    console.log($('#input').val());
+
+  },
+
+  loadFxn: function() {
 
 
-// input
-// API call with search terms ==> retrieves URLs
-// perform load API call
+  }
 
-// listener on the search button in the CollectionView
+});

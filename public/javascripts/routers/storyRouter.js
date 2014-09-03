@@ -6,6 +6,7 @@ App.Router = Backbone.Router.extend({
   initialize: function() {
     console.log("New router");
     this.feedsDataLoop();
+    App.searchView = new App.SearchView(); 
   },
 
   index: function() {
@@ -22,8 +23,7 @@ App.Router = Backbone.Router.extend({
 
       // $('#feed').append('<h2>' + category + '</h2>');
 
-      // create collection view
-
+      // create collection & collection view
       var storyCollection = new App.StoriesCollection();
       storyCollection.category = category;
       App.Views[category] = new App.StoriesCollectionView({collection: storyCollection});
@@ -37,7 +37,6 @@ App.Router = Backbone.Router.extend({
     var feed = new google.feeds.Feed(feedUrl);
     feed.setNumEntries(1);
     feed.load(function(result) {
-      // console.log(result);
       if (!result.error) {
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
