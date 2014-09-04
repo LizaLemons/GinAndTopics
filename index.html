@@ -26,10 +26,32 @@
   <body>
     <h1>Gin & Topics</h1>
 
+    <div id="search-content">
+
+    </div>
+
     <div id="search">
       <input id="input" type="text" placeholder="Search other categories">
       <button id="search-button">Search</button>
+      <!-- Search for: <span id="search-span"></span> -->
     </div>
+
+    <!-- <script>
+      // Model
+      var searchModel = new Backbone.Model({
+        searchTerms: ''
+      });
+      // View
+      searchModel.on('change', function() {
+        $('#search-span').html.(searchModel.get('searchTerms'));
+      });
+      // Controller
+      $('#input').on('keyup', function() {
+        searchModel.set('searchTerms', $('#input').val();
+        console.log($('#input').val());
+        console.log("Got it")
+      });
+    </script> -->
 
     <div id="feed">
       <!-- feeds will be appended here -->

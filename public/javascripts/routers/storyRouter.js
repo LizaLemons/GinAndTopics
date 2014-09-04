@@ -6,7 +6,7 @@ App.Router = Backbone.Router.extend({
   initialize: function() {
     console.log("New router");
     this.feedsDataLoop();
-    App.searchView = new App.SearchView(); 
+    App.searchView = new App.SearchView();
   },
 
   index: function() {
@@ -40,8 +40,6 @@ App.Router = Backbone.Router.extend({
       if (!result.error) {
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
-          // JSON.stringify(storyContent);
-
           var storyModel = new App.StoryModel({
             title: result.feed.entries[i].title,
             author: result.feed.entries[i].author,
@@ -74,25 +72,6 @@ App.Router = Backbone.Router.extend({
 // escape all double quotes within <html>
 // 'mystring'.replace(/"/g, '&quot;');
 // 'mystring'.replace(/'/g, '&quot;');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
