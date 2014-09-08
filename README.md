@@ -12,7 +12,7 @@ Mashable, CNN, the New York Times, Conde Nast Traveler and Bustle.
 Links
 ========================
 • Visit the app here 
-http://lizalemons.github.io/GinAndTopics/
+www.ginandtopics.com
 • User stories 
 https://trello.com/b/lmOEOFFx/gin-andtopics
 
