@@ -53,7 +53,8 @@ Collection View
 
 Search View
 • New search view created upon router initialization
-• The search view is simply for the input & the button
+• The search view is simply for the input bar & the button
+• Within this file, create another view for the searched content?
 • Event: click search button, triggers:
   - find()
   - findDone()
@@ -62,7 +63,7 @@ Search View
 
   => find()
     - Triggers the Find API call on the query
-    - Triggers (only refernces?) findDone() in the context of *this*
+    - Triggers (only references?) findDone() in the context of *this*
       (here, this = search view)
     - Now anytime findDone is called, will be performed in the context of *this*
   => findDone()
@@ -75,6 +76,8 @@ Search View
   => render()
     - Sets #searched-content div's html as the App.ViewsSearch's el
     - App.ViewSearch's el = .collection (bc it is a storiesCollectionView)
+
+* How emptying #searched-content before appending new?
 
 
 

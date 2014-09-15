@@ -16,7 +16,6 @@ App.StoriesCollectionView = Backbone.View.extend({
     // click on collection h1, showCategoryStories
   },
   addOne: function(newModel) {
-    
     var singleView = new App.StoryView({ model: newModel })
     this.$el.append(singleView.el);
   },
