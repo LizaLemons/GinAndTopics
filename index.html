@@ -2,62 +2,48 @@
 <html lang="en" data-framework="backbonejs">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Gin & Topics</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Dependency scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <!-- Backbone components scripts -->
+    <!-- Backbone scripts -->
     <script type="text/javascript" src="public/javascripts/application.js"></script>
     <script type="text/javascript" src="public/javascripts/feeds.js"></script>
     <script src="public/javascripts/models/storyModel.js"></script>
     <script src="public/javascripts/collections/storiesCollection.js"></script>
     <script src="public/javascripts/routers/storyRouter.js"></script>
     <script src="public/javascripts/views/storiesCollectionView.js"></script>
-    <!-- Application scripts -->
     <script src="public/javascripts/views/storyView.js"></script>
     <script src="public/javascripts/views/searchView.js"></script>
-    <!-- Backbone components scripts -->
+    <!-- Bootstrap scripts -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
     <h1>Gin & Topics</h1>
 
-    <div id="search-content">
-
-    </div>
-
     <div id="search">
       <input id="input" type="text" placeholder="Search other categories">
       <button id="search-button">Search</button>
-      <!-- Search for: <span id="search-span"></span> -->
+      <div id="searched-content">
+        <!-- append searched content here -->
+      </div>
     </div>
-
-    <!-- <script>
-      // Model
-      var searchModel = new Backbone.Model({
-        searchTerms: ''
-      });
-      // View
-      searchModel.on('change', function() {
-        $('#search-span').html.(searchModel.get('searchTerms'));
-      });
-      // Controller
-      $('#input').on('keyup', function() {
-        searchModel.set('searchTerms', $('#input').val();
-        console.log($('#input').val());
-        console.log("Got it")
-      });
-    </script> -->
 
     <div id="feed">
-      <!-- feeds will be appended here -->
+      <!-- collection views appended here -->
     </div>
     <div id='modal'>
-
+      <!-- modal view appended here -->
     </div>
 
     <!-- Template for model view -->

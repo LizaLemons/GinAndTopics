@@ -1,46 +1,41 @@
 
 App.SearchView = Backbone.View.extend({
   el: '#search',
-
+  initialize: function() {
+    this.template = Handlebars.compile($('#category-template').html());
+  },
+  render: function(category) {
+    this.$('#searched-content').html(App.ViewsSearch.el);
+  },
   events: {
     'click #search-button': 'find'
   },
-
   find: function() {
-    // Perform Find API call
-    // ==> Put URLs (result) in an array
-    // Loop thru array, perform loadFxn
-
-    // console.log($('#input').val());
     google.load("feeds", "1");
     var query = $('#input').val();
     console.log(query);
-    // performs the Find API call on the query
-    google.feeds.findFeeds(query, this.findDone);
-
+    google.feeds.findFeeds(query, this.findDone.bind(this));
   },
-
   findDone: function(result) {
-    console.log(result);
     // typeof: result.entries = an array of URLs
-
     var storyCollection = new App.StoriesCollection();
-    var search = "search";
+    var search = "Search";
     storyCollection.category = search;
     App.ViewsSearch = new App.StoriesCollectionView({collection: storyCollection});
-
     // loop through URLs
+    // result =
     for (var i = 0; i < result.entries.length; i++) {
-      var url = result.entries[i];
+      var url = result.entries[i].url;
       var storyModel = this.createModel(url);
     }
   },
-
   createModel: function(feedUrl) {
     var feed = new google.feeds.Feed(feedUrl);
     feed.setNumEntries(1);
+    console.log(feedUrl, feed);
     feed.load(function(result) {
       if (!result.error) {
+        // looping thru one URL's stories, creates model for each
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
           var storyModel = new App.StoryModel({
@@ -52,12 +47,13 @@ App.SearchView = Backbone.View.extend({
             publishedDate: result.feed.entries[i].publishedDate,
             categories: result.feed.entries[i].categories
           });
+          console.log(storyModel)
           App.ViewsSearch.collection.add(storyModel);
         }
       }
-        App.ViewsSearch.render();
-      });
-    }
+      App.ViewsSearch.render();
+    });
+    this.render();
+  }
   // google.setOnLoadCallback(find);
-
 });

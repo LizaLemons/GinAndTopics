@@ -4,7 +4,7 @@ App.Router = Backbone.Router.extend({
   },
 
   initialize: function() {
-    console.log("New router");
+    console.log("Router initialized");
     this.feedsDataLoop();
     App.searchView = new App.SearchView();
   },
@@ -14,30 +14,33 @@ App.Router = Backbone.Router.extend({
   },
 
   feedsDataLoop: function() {
-    // looping through feedsData hash
-
+    // looping through each cat. in feedsData hash
     for (var i = 0; i < feedsData.length; i++) {
       var category = feedsData[i]["category"];
       var domId = feedsData[i]["domId"];
       var feedsArray = feedsData[i]["feeds"];
 
+      // Displaying category without category template:
       // $('#feed').append('<h2>' + category + '</h2>');
 
       // create collection & collection view
       var storyCollection = new App.StoriesCollection();
       storyCollection.category = category;
       App.Views[category] = new App.StoriesCollectionView({collection: storyCollection});
-      // loop through feed URLs
+      // loop through feeds array in each category
       for (var j = 0; j < feedsArray.length; j++) {
         var storyModel = this.createFeedModel(feedsArray[j], category);
       }
     }
   },
+  // Creates models, adds them to correct collection
   createFeedModel: function(feedUrl, category) {
+    // Make API call on each URL in feeds array
     var feed = new google.feeds.Feed(feedUrl);
     feed.setNumEntries(1);
     feed.load(function(result) {
       if (!result.error) {
+        // loop through result (array of headlines) of each URL
         for (var i = 0; i < result.feed.entries.length; i++) {
           var storyContent = result.feed.entries[i].content;
           var storyModel = new App.StoryModel({
@@ -72,8 +75,3 @@ App.Router = Backbone.Router.extend({
 // escape all double quotes within <html>
 // 'mystring'.replace(/"/g, '&quot;');
 // 'mystring'.replace(/'/g, '&quot;');
-
-
-
-
-//

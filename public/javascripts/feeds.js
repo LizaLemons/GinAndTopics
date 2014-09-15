@@ -20,14 +20,14 @@ feedsData = [
     domId: '#tech-container',
     feeds: [
       "http://feeds.mashable.com/mashable/tech",
-      "http://feeds.mashable.com/mashable/socialmedia",
-      "http://feeds.feedburner.com/TechCrunch/social",
       "http://feeds.feedburner.com/Mobilecrunch",
       "http://feeds.feedburner.com/crunchgear",
       "http://feeds.feedburner.com/TechCrunchIT",
       "http://feeds.feedburner.com/TechCrunch/greentech",
       "http://www.npr.org/rss/rss.php?id=1019",
-      "http://feeds.reuters.com/reuters/technologyNews"
+      "http://feeds.reuters.com/reuters/technologyNews",
+      "http://feeds.mashable.com/mashable/socialmedia",
+      "http://feeds.feedburner.com/TechCrunch/social"
     ]
   },
   {
