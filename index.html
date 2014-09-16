@@ -7,7 +7,8 @@
 		<title>Gin & Topics</title>
 
     <!-- Bootstrap CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="public/styles/application.css" rel="stylesheet">
     <!-- Dependency scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -29,7 +30,19 @@
   </head>
 
   <body>
-    <h1>Gin & Topics</h1>
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Gin&<b>Topics<b></a>
+            </div>
+            <div class="navbar-collapse collapse">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="search">
       <input id="input" type="text" placeholder="Search other categories">

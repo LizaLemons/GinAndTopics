@@ -19,8 +19,9 @@ App.SearchView = Backbone.View.extend({
   findDone: function(result) {
     // typeof: result.entries = an array of URLs
     var storyCollection = new App.StoriesCollection();
-    var search = "Search";
-    storyCollection.category = search;
+    // var search = "Search Results";
+    var query = $('#input').val();
+    storyCollection.category = query;
     App.ViewsSearch = new App.StoriesCollectionView({collection: storyCollection});
     // loop through URLs
     // result =
