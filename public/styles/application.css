@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  background-image: url('http://i1371.photobucket.com/albums/ag318/thrifstorejunky/904e4c86918081fb22b4c6413fee21a6_zps3af2f0fb.jpg');
+  background-image: url('https://unsplash.imgix.net/19/waves.JPG?q=75&fm=jpg&auto=format&s=f724b5d06cd83db4c11239de505f18b3');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -12,7 +12,6 @@ body {
   text-align: center;
   padding-bottom: 40px;
   color: #5a5a5a;
-
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -25,7 +24,7 @@ body {
   font-family: 'Lobster Two', cursive;
   font-size: 50px;
   padding: 50px 50px;
-  /* margin-top: -300px; */
+  margin-top: -365px;
   margin-left: 185px;
   text-align: center;
   width: 250px;
