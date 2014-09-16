@@ -32,7 +32,7 @@ App.SearchView = Backbone.View.extend({
   },
   createModel: function(feedUrl) {
     var feed = new google.feeds.Feed(feedUrl);
-    feed.setNumEntries(1);
+    feed.setNumEntries(2);
     console.log(feedUrl, feed);
     feed.load(function(result) {
       if (!result.error) {

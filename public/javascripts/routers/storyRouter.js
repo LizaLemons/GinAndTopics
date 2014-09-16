@@ -37,7 +37,7 @@ App.Router = Backbone.Router.extend({
   createFeedModel: function(feedUrl, category) {
     // Make API call on each URL in feeds array
     var feed = new google.feeds.Feed(feedUrl);
-    feed.setNumEntries(1);
+    feed.setNumEntries(2);
     feed.load(function(result) {
       if (!result.error) {
         // loop through result (array of headlines) of each URL
