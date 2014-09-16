@@ -19,8 +19,9 @@ App.SearchView = Backbone.View.extend({
   findDone: function(result) {
     // typeof: result.entries = an array of URLs
     var storyCollection = new App.StoriesCollection();
-    var search = "Search";
-    storyCollection.category = search;
+    // var search = "Search Results";
+    var query = $('#input').val();
+    storyCollection.category = query;
     App.ViewsSearch = new App.StoriesCollectionView({collection: storyCollection});
     // loop through URLs
     // result =
@@ -31,7 +32,7 @@ App.SearchView = Backbone.View.extend({
   },
   createModel: function(feedUrl) {
     var feed = new google.feeds.Feed(feedUrl);
-    feed.setNumEntries(1);
+    feed.setNumEntries(2);
     console.log(feedUrl, feed);
     feed.load(function(result) {
       if (!result.error) {

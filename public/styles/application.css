@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url('http://i1371.photobucket.com/albums/ag318/thrifstorejunky/904e4c86918081fb22b4c6413fee21a6_zps3af2f0fb.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.lead {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  font-family: 'Lobster Two', cursive;
+  font-size: 50px;
+  padding: 50px 50px;
+  /* margin-top: -300px; */
+  margin-left: 185px;
+  text-align: center;
+  width: 250px;
+  color: #333;
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+  vertical-align: middle;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bar {
+  background: white;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  z-index: 100;
+}
+
+#new-container {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  color: black;
+  background: #ffffff;
+  opacity: 0.8;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}

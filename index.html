@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en" data-framework="backbonejs">
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Gin & Topics</title>
 
     <!-- Bootstrap CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/styles/application.css" rel="stylesheet">
     <!-- Dependency scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -29,21 +31,32 @@
   </head>
 
   <body>
-    <h1>Gin & Topics</h1>
-
-    <div id="search">
-      <input id="input" type="text" placeholder="Search other categories">
-      <button id="search-button">Search</button>
-      <div id="searched-content">
-        <!-- append searched content here -->
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="inner cover">
+            <p class="lead">Gin&Topics</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="feed">
-      <!-- collection views appended here -->
-    </div>
-    <div id='modal'>
-      <!-- modal view appended here -->
+    <div class="bar"></div>
+
+    <div id="new-container">
+      <div id="search">
+        <input id="input" type="text" placeholder="Search other categories">
+        <button id="search-button">Search</button>
+        <div id="searched-content">
+          <!-- append searched content here -->
+        </div>
+      </div>
+      <div id="feed">
+        <!-- collection/model views appended here -->
+      </div>
+      <div id='modal'>
+        <!-- modal view appended here -->
+      </div>
     </div>
 
     <!-- Template for model view -->
@@ -65,7 +78,7 @@
 
     <!-- Template for collection view -->
     <script id="category-template" type="text/x-handlebars-template">
-        <h2>{{category}}</h2>
+        <h1>{{category}}</h1>
     </script>
 
   </body>
