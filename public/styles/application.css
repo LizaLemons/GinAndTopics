@@ -19,6 +19,14 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h3 {
+  cursor: pointer;
+}
+
+h3:hover {
+  color: #4972E8;
+}
+
 .lead {
   border-top: 5px solid black;
   border-bottom: 5px solid black;
