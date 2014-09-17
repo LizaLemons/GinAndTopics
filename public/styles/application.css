@@ -16,6 +16,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  font-family: 'Lato', sans-serif;
 }
 
 .lead {
@@ -62,14 +63,41 @@ body {
   z-index: 100;
 }
 
-#new-container {
-  font-family: 'Lato', sans-serif;
+#feed-container {
   font-size: 1.1em;
   color: black;
   background: #ffffff;
   opacity: 0.8;
   color: #333;
 }
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption
+.carousel-caption {
+  z-index: 10;
+}
+
+Declare heights because of positioning of img element
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}  */
+
+/* -------------------------------------------------- */
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */

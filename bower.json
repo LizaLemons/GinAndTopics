@@ -1,8 +1,9 @@
 {
-  "name":"GinAndTopics",
+  "name": "GinAndTopics",
   "dependencies": {
-    "backbone":"latest",
-    "jquery":"latest",
-    "handlebars":"latest"
+    "backbone": "latest",
+    "jquery": "latest",
+    "handlebars": "latest",
+    "css-modal": "~1.1.8"
   }
 }

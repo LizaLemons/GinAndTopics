@@ -59,11 +59,12 @@ feedsData = [
     ]
   },
   {
-    category: 'Fashion',
+    category: 'Style',
     domId: '#fashion-container',
     feeds: [
       "http://www.huffingtonpost.com/tag/fashion/feed",
-      "http://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml"
+      "http://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+      "http://www.huffingtonpost.com/vogue/"
     ]
   },
   {

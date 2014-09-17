@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Gin & Topics</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link href="public/styles/application.css" rel="stylesheet">
     <!-- Dependency scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -43,7 +43,7 @@
 
     <div class="bar"></div>
 
-    <div id="new-container">
+    <div id="feed-container">
       <div id="search">
         <input id="input" type="text" placeholder="Search other categories">
         <button id="search-button">Search</button>
@@ -54,9 +54,12 @@
       <div id="feed">
         <!-- collection/model views appended here -->
       </div>
-      <div id='modal'>
-        <!-- modal view appended here -->
-      </div>
+<!--       <div id="blackout">
+  <div id="modalBox">
+    modal template appended here
+  </div>
+</div> -->
+
     </div>
 
     <!-- Template for model view -->
@@ -66,7 +69,8 @@
 
     <!-- Template for modal -->
     <script id="story-modal-template" type="text/x-handlebars-template">
-      <a href="{{link}}">{{title}}</a>
+      <a href="#" class="close">CLOSE</a><br><br>
+      <a href="{{link}}" id="title">{{title}}</a>
       <p>{{author}}</p>
       <p>{{publishedDate}}</p>
       <!-- <p>{{{contentSnippet}}}</p> -->
@@ -79,6 +83,12 @@
     <!-- Template for collection view -->
     <script id="category-template" type="text/x-handlebars-template">
         <h1>{{category}}</h1>
+    </script>
+
+    <!-- Template for carousel -->
+    <script id="carousel-template" type="text/x-handlebars-template">
+      <h1>{{category}}</h1>
+      <a href="{{link}}">{{title}}</a>
     </script>
 
   </body>
