@@ -48,19 +48,20 @@ App.StoryView = Backbone.View.extend({
     'border-style':'solid',
     'border-color': '#1F1F2E',
 		'z-index':'50',
-		'height':'px',
-		'width':'px',
+		'height':'500px',
+		'width':'700px',
+    'padding':'50px',
     // Positioning
-    'top':'25%',
-    'left':'1%',
+    'left':'25%',
+    'top':'10%',
     // Scrolling
-    'overflow':'auto',
-    'padding':'50px'
+    'overflow':'scroll',
     });
 
-    // $('#story-modal-template').css({
-    //
-    // });
+    $('#modalTempDiv').css({
+      'width':'100%'
+
+    });
 
     $("a").css({
       'text-decoration': 'none',

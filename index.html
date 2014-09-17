@@ -69,15 +69,17 @@
 
     <!-- Template for modal -->
     <script id="story-modal-template" type="text/x-handlebars-template">
-      <a href="#" class="close">CLOSE</a><br><br>
-      <a href="{{link}}" id="title">{{title}}</a>
-      <p>{{author}}</p>
-      <p>{{publishedDate}}</p>
-      <!-- <p>{{{contentSnippet}}}</p> -->
-      <div class="content">
-        {{{content}}}
-      </div>
-      <p>{{categories}}</p>
+      <div id="modalTempDiv">
+        <a href="#" class="close">CLOSE</a><br><br>
+        <a href="{{link}}" id="title">{{title}}</a>
+        <p>{{author}}</p>
+        <p>{{publishedDate}}</p>
+        <!-- <p>{{{contentSnippet}}}</p> -->
+        <div class="content">
+          {{{content}}}
+        </div>
+        <p>{{categories}}</p>
+      </div>  
     </script>
 
     <!-- Template for collection view -->
